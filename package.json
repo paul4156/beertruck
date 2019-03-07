@@ -2,7 +2,7 @@
   "name": "beertruck",
   "version": "0.1.0",
   "description": "A fun js demo project",
-  "main": "src/index.js",
+  "main": "src/index.mjs",
   "scripts": {
     "test": "npm test"
   },
@@ -26,8 +26,6 @@
   "homepage": "https://github.com/paul4156/beertruck#readme",
   "dependencies": {},
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
     "eslint": "^5.15.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0"

@@ -1,6 +1,20 @@
 # beertruck
 This is a fun js demo project
 
+## Setup
+
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+```
+
+or follow https://github.com/creationix/nvm#install--update-script.
+
+Then install node 11:
+
+```
+nvm install 11
+```
+
 ## Run
 ```
 node --experimental-modules src/index.mjs
