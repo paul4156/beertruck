@@ -15,9 +15,19 @@ Then install node 11:
 nvm install 11
 ```
 
-## Run
 ```
-node --experimental-modules src/index.mjs
+npm install
+```
+
+## Run
+* Run app:
+```
+npm start
+```
+
+* Test: TODO
+```
+npm test
 ```
 
 ## Config
@@ -43,5 +53,5 @@ Constance/Beers contains all types of beers and their required temperatures. Cur
 * Testing
 
 ## Roadmap
-* 1.0 web version
+* 1.0 Web version
 * 2.0 Automatically optimise beer arrangement in containers
