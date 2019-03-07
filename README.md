@@ -25,7 +25,7 @@ npm install
 npm start
 ```
 
-* Test: TODO
+* Test:
 ```
 npm test
 ```
@@ -46,12 +46,12 @@ This can be customised as desired.
 Constance/Beers contains all types of beers and their required temperatures. Currently, it contains the initial 6 beers. But one can change.
 
 ## Assumptions
-* Temperature will only increase unless human intervention.
-* Each container will start from the lowest temperature allowed to increase safety.
-
-## TODO
-* Testing
+* Temperature will only increase unless human intervention (ctrl + c).
+* Each container starts from the lowest temperature allowed.
 
 ## Roadmap
-* 1.0 Web version
-* 2.0 Automatically optimise beer arrangement in containers
+* v0.2 Improve package.json scripts
+* v0.3 Test coverage
+* v0.4 CI
+* v1.0 Web interface using express
+* v2.0 Automatically optimise beer arrangement in containers

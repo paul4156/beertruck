@@ -1,8 +1,9 @@
 export default class ClimateChanger {
   /**
-   * Construct a climate changer instance which will change temperature of each container and monitors beers
+   * Construct a climate changer instance which will change temperature of
+   * each container and monitors beers
    *
-   * @param {array} options
+   * @param {object} options
    */
   constructor(options) {
     this.lower = options.lower ? options.lower : 0;
@@ -24,11 +25,16 @@ export default class ClimateChanger {
    * Change all containers' temperatures
    */
   change() {
-    this.containers.forEach(container => container.heat(this.getChange()));
+    this.containers.forEach(
+      container => container.heat(this.getChange()),
+    );
   }
 
   /**
-   * Monitors all containers. If safe, just report temperature.
+   * Monitors all containers.
+   *
+   * If safe, just report temperature.
+   *
    * If not safe, list all beers in the container that is in danger,
    * ie, the temperature is above allowance.
    * Then recommend an action.

@@ -3,6 +3,11 @@ import Container from './Container';
 import ClimateChanger from './ClimateChanger';
 
 export default class Simulator {
+  /**
+   * Create a simulator to simulate the temperature changes in all containers
+   *
+   * @param {object} options
+   */
   constructor(options) {
     const self = this;
     this.configs = options.configs;
@@ -13,11 +18,17 @@ export default class Simulator {
     this.climateChanger.monitorContainers();
   }
 
-  tick1() {
+  /**
+   * A tick function that triggers the temperature change
+   */
+  tick() {
     this.climateChanger.change();
     this.climateChanger.monitorContainers();
   }
 
+  /**
+   * Create containers from input configs
+   */
   configure() {
     let index = 0;
     this.containers = this.configs.map((config) => {
@@ -26,6 +37,14 @@ export default class Simulator {
     });
   }
 
+  /**
+   * Create a single container filled with created beers from config
+   *
+   * @param {array} config
+   * @param {number} index
+   *
+   * @returns {Container}
+   */
   static configureOneContainer(config, index) {
     const beers = config.map(n => Simulator.getBeer(n));
     return new Container({
@@ -34,7 +53,14 @@ export default class Simulator {
     });
   }
 
-  static getBeer(n) {
-    return Beers[n - 1];
+  /**
+   * Get a Beer object based on the index n
+   *
+   * @param {number} index
+   *
+   * @returns {Beer}
+   */
+  static getBeer(index) {
+    return Beers[index - 1];
   }
 }

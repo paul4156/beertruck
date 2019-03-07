@@ -5,4 +5,4 @@ const simulator = new Simulator({
   configs: Configs,
 });
 
-setInterval(simulator.tick1.bind(simulator), 1000);
+setInterval(simulator.tick.bind(simulator), 1000);
