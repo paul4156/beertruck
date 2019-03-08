@@ -25,7 +25,8 @@ export default class ClimateChanger {
    * Change all containers' temperatures
    */
   change() {
-    this.containers.forEach(
+    const { containers } = this;
+    containers.forEach(
       container => container.heat(this.getChange()),
     );
   }
@@ -47,19 +48,21 @@ export default class ClimateChanger {
    *     degrees immediately
    */
   monitorContainers() {
-    this.containers.forEach((container) => {
+    const { containers } = this;
+    containers.forEach((container) => {
       const containerInfo = `Container ${container.number}: ${container.temperature.toFixed(2)} degrees`;
       if (container.isSafe()) {
         console.log(`${containerInfo}`);
         return;
       }
-      const beers = container.getBeersInDanger();
-      const beerInfo = beers
+      const beers = container
+        .getBeersInDanger()
         .map(beer => `${beer.number} (${beer.name})`)
         .join(', ');
+
       console.error(
         '\x1b[41m%s\x1b[0m',
-        `${containerInfo}, ${beerInfo} in danger! Reduce temperature to ${container.getInitTemperature()} degrees immediately`,
+        `${containerInfo}, ${beers} in danger! Reduce temperature to ${container.getInitTemperature()} degrees immediately`,
       );
     });
   }

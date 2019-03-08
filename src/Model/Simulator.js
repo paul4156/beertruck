@@ -16,6 +16,7 @@ export default class Simulator {
       containers: self.containers,
     });
     this.climateChanger.monitorContainers();
+    this.tick = this.tick.bind(this);
   }
 
   /**
@@ -30,11 +31,9 @@ export default class Simulator {
    * Create containers from input configs
    */
   configure() {
-    let index = 0;
-    this.containers = this.configs.map((config) => {
-      index += 1;
-      return Simulator.configureOneContainer(config, index);
-    });
+    this.containers = this.configs.map(
+      (config, index) => Simulator.configureOneContainer(config, index),
+    );
   }
 
   /**

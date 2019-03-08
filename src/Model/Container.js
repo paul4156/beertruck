@@ -48,8 +48,8 @@ export default class Container {
       return [];
     }
 
-    const { temperature } = this;
-    return this.beers.filter(beer => !beer.isSafe(temperature));
+    const { beers, temperature } = this;
+    return beers.filter(beer => !beer.isSafe(temperature));
   }
 
   /**
